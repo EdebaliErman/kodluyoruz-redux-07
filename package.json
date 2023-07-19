@@ -18,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "homepage":"https://edebalierman.github.io/kodluyoruz-redux-07/"
   },
   "eslintConfig": {
     "extends": [
