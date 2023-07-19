@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+body {
+  background: #fff;
+  font-family: "Delius", cursive;
+}
+
+.app {
+  padding: 35px;
+  width: 40%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.app .playground {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  perspective: 1000px;
+  margin-bottom: -15px;
+}
+
+.app .playground .card {
+  width: 15%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 110px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 15px;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.app .playground .card div {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: 0.6s;
+  background: #f4f5f7;
+}
+
+.app .playground .card .front {
+  font-size: 50px;
+  line-height: 120px;
+  cursor: pointer;
+  color: #b9bfcc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app .playground .card .back {
+  transform: rotateY(180deg);
+  line-height: 110px;
+}
+
+.app .playground .card .back img {
+  vertical-align: middle;
+  width: 70%;
+}
+
+.app .playground .card.opened {
+  transform: rotateY(180deg);
+}
+
+.app .playground .card.matched {
+  transform: rotateY(180deg);
+}
+
+.app .playground .card.matched .back {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05) inset;
+  -webkit-animation: selected 0.8s 0s ease 1;
+  animation: selected 0.8s 0s ease 1;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  opacity: 0.2;
+}
+
+.failed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(252, 252, 252);
+  font-size: 4rem;
+  text-shadow: 1px 1px 0.4rem red, -3px 5px 1.3rem black;
+}
+
+.failed button {
+  width: 19rem;
+  height: 8rem;
+  margin-left: 12rem;
+  text-align: center;
+  border-radius: 3rem;
+  padding: 1rem;
+  color: #f4f5f7;
+  border: none;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: 'Caprasimo', cursive;
+  text-shadow: 1px -1px 3px rgb(233, 32, 32), 1px 1px 5px rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.356);
+  box-shadow: inset 1px 1px 1rem 1rem rgba(228, 225, 224, 0.219), 4px 5px 0.3rem black;
+}
+
+.failed button:hover {
+  text-shadow: 1px -1px 3px rgb(233, 32, 32), 1px 1px 5px rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.356);
+  box-shadow: inset 1px -10px 1rem 1rem rgba(228, 225, 224, 0.219), 4px 5px 0.3rem rgb(228, 44, 44);
+}
+
+.win {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(252, 252, 252);
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 1px 1px 0.4rem rgb(0, 255, 255), -3px 5px 1.3rem black;
+}
+
+.win>div {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.win button {
+  padding: 2rem;
+  margin-left: 12rem;
+  text-align: center;
+  border-radius: 3rem;
+  color: #f4f5f7;
+  border: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Caprasimo', cursive;
+  text-shadow: 1px -1px 3px rgb(32, 220, 233), 1px 1px 5px rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.356);
+  box-shadow: inset 1px 1px 1rem 1rem rgba(228, 225, 224, 0.219), 4px 5px 0.3rem black;
+}
+
+.win button:hover {
+  text-shadow: 1px -1px 3px rgb(32, 233, 223), 1px 1px 5px rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.356);
+  box-shadow: inset 1px -10px 1rem 1rem rgba(228, 225, 224, 0.219), 4px 5px 0.3rem rgb(44, 228, 228);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3rem;
+}
+.footer a {
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+}
+.footer svg{
+  height: 3rem;
+  width: 3rem;
+}
+.headName{
+  text-align: center;
+  font-size: 5rem;
+}
+@-webkit-keyframes selected {
+  0% {
+    opacity: 0.2;
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes selected {
+  0% {
+    opacity: 0.2;
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
