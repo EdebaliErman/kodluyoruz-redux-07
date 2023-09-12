@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  html,
+  body {
+    background-image: url(/public/Assets/image.png);
+    @apply w-full m-0 bg-cover bg-center h-screen flex justify-center items-center
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-cover bg-center h-screen flex justify-start items-center flex-col bg-cardBg w-[454px] h-[701px] rounded-3xl shadow-2xl
+  }
+  header{@apply w-full}
+  header img{
+    @apply rounded-t-3xl w-full
+  }
+  .card article  {
+    @apply flex justify-center items-center flex-col m-12 gap-5 text-center 
+  }
+  article h1{
+    @apply text-textHead text-3xl font-sans font-[700]
+  }
+  article p{
+    @apply text-lg  text-money font-semibold
+  }
+  .music-bar {
+    @apply flex justify-between items-center gap-3 bg-musicBar w-full p-3 
+  }
+  .music-left  {
+    @apply flex   text-left  text-lg gap-4
+  }
+  .music-left span h3{
+    @apply text-textHead  font-extrabold  
+  }
+  .music-left span h4{
+    @apply text-money font-medium
+  }
+  .music-bar h3{
+    @apply text-colorText font-sans font-bold underline pr-3
+  }
+  footer{
+    @apply flex flex-col justify-center items-center gap-5
+  }
+  .btn-text{
+    @apply w-[23rem] bg-button p-3 font-sans rounded-xl text-cardBg font-bold text-base
+  }
+  .btn-cansel{
+    @apply text-money font-bold font-sans
+  }
+}
