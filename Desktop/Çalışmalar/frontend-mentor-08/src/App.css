@@ -1,0 +1,31 @@
+@tailwind components;
+
+@layer components {
+  .App {
+    @apply  h-full relative flex justify-center items-center p-96 mt-[-32rem] mr-[-32rem]
+  }
+
+  .cardback {
+    @apply w-full h-36 rounded-t-xl
+  }
+
+  .card {
+    @apply w-96 bg-bottomCard rounded-xl shadow-2xl shadow-text z-10
+  }
+
+  .cart-bottom {
+    @apply p-3 flex-col justify-center items-center
+  }
+
+  h1, h2 {
+    @apply text-headText font-sans font-bold text-xl
+  }
+  span,p{
+    @apply text-text font-normal font-sans  tracking-widest
+  }
+}
+
+.cardback {
+  background: url(../public/Asset/card.png);
+
+}
